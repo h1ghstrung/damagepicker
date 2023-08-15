@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Damage Picker</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Damage randomizer for D&D 5th edition.">
+    <meta name="author" content="h1ghstrung">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="control.js" async></script>
+    <script type="text/javascript" src="dampick.js" async></script>
+    <link rel="stylesheet" href="damstyles.css">
+</head>
+<body>
+
+<h1>Damage Picker</h1>
+<section>
+    <h2>Useage</h2>
+    <p>You can select the table item directly, select the randomize button, or enter your own dice roll manually.<br />
+    Your current damage type is displayed as well as your previous damage types.<br />
+    Using the "Clear" button clears all previous damages listed.</p>
+</section>
+
+<section>
+    <div class="fcontainer">
+        <div class="fchild">
+            <h4>Damage Types:</h4>
+            <ul>
+                <li>Acid</li>
+                <li>Cold</li>
+                <li>Fire</li>
+                <li>Force</li>
+                <li>Lightning</li>
+                <li>Necrotic</li>
+                <li>Poison</li>
+                <li>Psychic</li>
+                <li>Radiant</li>
+                <li>Thunder</li>
+            </ul>
+        </div>
+        <div class="fchild" id="curdam">
+            <h4>Current damage</h4>
+            <p></p>
+        </div>
+        <div class="fchild" id="damhist">
+            <h4>Damage history</h4>
+            <p>lorem ipsum</p>
+            <p>and some</p>
+            <p>other lines</p>
+            <p>for testing</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="fcontainer">
+        <div class="fchild" id="playerroll" contenteditable="true">Type Here</div>
+        <button class="fchild" id="prollenter" type="button">Enter Manual Roll</button>
+        <button class="fchild" id="rollrandom" type="button">Pick Random</button>
+        <button class="fchild" id="clearhist" type="button">Clear Damage</button>
+    </div>
+</section>
+</body>
+</html>

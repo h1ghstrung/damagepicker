@@ -1,0 +1,44 @@
+ul {
+    display: block;
+    list-style-type: none;
+    line-height:180%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 1em;
+    padding-left: 40px;
+}
+
+li {
+    background-color: bisque;
+}
+
+li:nth-child(odd) {
+    background-color: darkgrey;
+}
+
+li:hover {
+    background-color: darkslategray;
+    color: antiquewhite;
+}
+
+.fcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.fchild {
+    flex: 1 1 0px;
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 1em;
+    padding: .75em;
+    border: 1px solid black;
+}
+
