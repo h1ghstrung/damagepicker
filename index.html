@@ -7,7 +7,6 @@
     <meta name="author" content="h1ghstrung">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="control.js" async></script>
-    <script type="text/javascript" src="dampick.js" async></script>
     <link rel="stylesheet" href="damstyles.css">
 </head>
 <body>
@@ -37,23 +36,23 @@
                 <li>Thunder</li>
             </ul>
         </div>
-        <div class="fchild" id="curdam">
+        <div class="fchild">
             <h4>Current damage</h4>
-            <p></p>
+            <div id="curdam">
+              <p></p>
+            </div>
         </div>
-        <div class="fchild" id="damhist">
+        <div class="fchild">
             <h4>Damage history</h4>
-            <p>lorem ipsum</p>
-            <p>and some</p>
-            <p>other lines</p>
-            <p>for testing</p>
+            <div id="damhist">
+            </div>
         </div>
     </div>
 </section>
 
 <section>
     <div class="fcontainer">
-        <div class="fchild" id="playerroll" contenteditable="true">Type Here</div>
+        <div class="fchild" id="playerroll" contenteditable="true">Enter Roll (1-10)</div>
         <button class="fchild" id="prollenter" type="button">Enter Manual Roll</button>
         <button class="fchild" id="rollrandom" type="button">Pick Random</button>
         <button class="fchild" id="clearhist" type="button">Clear Damage</button>

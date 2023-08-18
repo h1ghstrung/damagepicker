@@ -3,16 +3,16 @@
 
 const damType = new Array();
 damType[0] = "1d10"
-damType[1] = "acid"
-damType[2] = "cold"
-damType[3] = "fire"
-damType[4] = "force"
-damType[5] = "lightning"
-damType[6] = "necrotic"
-damType[7] = "poison"
-damType[8] = "psychic"
-damType[9] = "radiant"
-damType[10] = "thunder"
+damType[1] = "Acid"
+damType[2] = "Cold"
+damType[3] = "Fire"
+damType[4] = "Force"
+damType[5] = "Lightning"
+damType[6] = "Necrotic"
+damType[7] = "Poison"
+damType[8] = "Psychic"
+damType[9] = "Radiant"
+damType[10] = "Thunder"
 
 // Functions for creating dice rolls
 
@@ -74,7 +74,6 @@ function getTableItem(table=damType, tablePick) {
   let increm = 0
   let tableRoll = 0
   if (tablePick != undefined) {
-    console.log(tablePick);
     increm = tablePick
    } else {
     tableRoll = diceNotationRoll(tableDice)
@@ -83,7 +82,6 @@ function getTableItem(table=damType, tablePick) {
     }
     increm = tableRoll
   }
-  console.log(tableRoll);
   while (table[increm]==undefined) {
     increm++
   }
@@ -97,28 +95,56 @@ const prollelem = document.getElementById("playerroll");
 const prollbutt = document.getElementById("prollenter");
 const rollrandbutt = document.getElementById("rollrandom");
 const clearhistbutt = document.getElementById("clearhist");
-const defheadcdam = "<h4>Current damage</h4>";
-const defheaddhist = "<h4>Damage history</h4>";
 
 clearhistbutt.addEventListener("click", function() {
-    clearDiv(damhistelem, defheaddhist);
+    clearDiv(damhistelem);
 });
 
-function clearDiv(target, defhead) {
-    target.innerHTML = defhead;
+rollrandbutt.addEventListener("click", function() {
+    const randam = getTableItem();
+    setCurrDam(randam);
+});
+
+prollelem.addEventListener("click", function() {
+    clearDiv(prollelem);
+    return null
+});
+
+prollbutt.addEventListener("click", function() {
+    const verifySet = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    let enteredPlayRoll = prollelem.innerText;
+    if (!verifySet.includes(enteredPlayRoll)) {
+      enteredPlayRoll = undefined;
+    };
+    const tabResult = getTableItem(damType, enteredPlayRoll);
+    setCurrDam(tabResult);
+    return null
+});
+
+function clearDiv(target) {
+    target.innerHTML = "";
     return null
 }
 
-function setDamage(target, defhead, dt) {
-    target.innerHTML = defhead + "<br />" + dt;
+function getCurrDam() {
+    const currDam = curdamelem.innerText
+    return currDam
+}
+
+function setDamHist(damage) {
+    const histlist = damhistelem.innerHTML
+    damhistelem.innerHTML = damage + "<br />" + histlist;
     return null
 }
 
-function moveDamage () {
+function setCurrDam(damage) {
+    moveDam();
+    curdamelem.innerHTML = "<p>" + damage + "<p>";
     return null
 }
 
-function getRoll() {
+function moveDam() {
+    const readCurr = getCurrDam();
+    setDamHist(readCurr);
     return null
 }
-
